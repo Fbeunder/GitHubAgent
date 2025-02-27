@@ -27,25 +27,30 @@ def main():
     
     # Header met titel en beschrijving
     st.title(APP_TITLE)
-    st.write(APP_DESCRIPTION)
+    st.markdown(f"<p style='text-align: center;'>{APP_DESCRIPTION}</p>", unsafe_allow_html=True)
     
     # Voeg een scheidingslijn toe
     st.divider()
     
-    # Toon de robot
-    display_robot()
+    # Toon de robot en vang de klik events op
+    robot_clicked = display_robot()
+    
+    # Verwerk klik events indien nodig
+    if robot_clicked:
+        handle_click_event()
+        st.experimental_rerun()
     
     # Creëer een container voor de quotes met consistente hoogte
-    quote_container = st.container(height=100)
+    quote_container = st.container(height=120)
     
     # Toon de huidige quote in het midden
     with quote_container:
         # Voeg wat padding en styling toe
         st.markdown(
             f"""
-            <div style="text-align: center; padding: 10px; 
+            <div style="text-align: center; padding: 15px; 
                         background-color: #f0f2f6; border-radius: 10px;
-                        font-size: 18px; font-weight: bold;">
+                        font-size: 18px; font-weight: bold; margin: 10px 0;">
                 "{st.session_state.current_quote}"
             </div>
             """, 
@@ -70,11 +75,6 @@ def main():
             """,
             unsafe_allow_html=True
         )
-    
-    # Verwerk callback van de robot klik via component events
-    robot_click = st.components.v1.html("", height=0)
-    if robot_click:
-        handle_click_event()
 
 
 if __name__ == "__main__":
