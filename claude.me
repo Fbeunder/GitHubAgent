@@ -1,0 +1,87 @@
+# Stan de GitHub Agent
+
+## 1. Projectoverzicht
+Stan de GitHub Agent is een interactieve Streamlit-applicatie die een robot weergeeft waarop gebruikers kunnen klikken om grappige uitspraken te zien over wat een GitHub Agent allemaal kan doen. Het doel is een eenvoudige, vermakelijke interface te bieden die laat zien wat de mogelijkheden van een GitHub Agent zijn op een humoristische wijze.
+
+## 2. Architectuur
+De applicatie volgt een modulaire structuur met de volgende modules:
+- `app.py`: Hoofdapplicatie en Streamlit interface
+- `robot.py`: Module voor robotvisualisatie
+- `quotes.py`: Module voor het beheren van grappige uitspraken
+- `utils.py`: Algemene hulpfuncties
+- `config.py`: Configuratie-instellingen
+
+## 3. Modules
+
+### app.py
+- **Status**: Nog te implementeren
+- **Bestandsnaam**: app.py
+- **Functionaliteit**: Hoofdapplicatie die alle componenten integreert en de Streamlit UI opbouwt
+- **Belangrijkste functies**:
+  - `main()`: 
+    - Parameters: Geen
+    - Return: Geen
+    - Afhankelijkheden: robot.py, quotes.py, utils.py, config.py
+
+### robot.py
+- **Status**: Nog te implementeren
+- **Bestandsnaam**: robot.py
+- **Functionaliteit**: Bevat de code voor het weergeven van de robot en het verwerken van klikinteracties
+- **Belangrijkste functies**:
+  - `display_robot()`: 
+    - Parameters: Geen
+    - Return: Streamlit component dat de robot weergeeft
+    - Afhankelijkheden: config.py
+
+### quotes.py
+- **Status**: Nog te implementeren
+- **Bestandsnaam**: quotes.py
+- **Functionaliteit**: Bevat de grappige uitspraken en logica voor het tonen ervan
+- **Belangrijkste functies**:
+  - `get_random_quote()`: 
+    - Parameters: Geen
+    - Return: String (een willekeurige grappige uitspraak)
+    - Afhankelijkheden: Geen
+  - `get_next_quote(current_index: int)`: 
+    - Parameters: current_index (int) - De index van de huidige uitspraak
+    - Return: Tuple[String, int] (de volgende uitspraak en bijbehorende index)
+    - Afhankelijkheden: Geen
+
+### utils.py
+- **Status**: Nog te implementeren
+- **Bestandsnaam**: utils.py
+- **Functionaliteit**: Algemene hulpfuncties voor de applicatie
+- **Belangrijkste functies**:
+  - `handle_click_event()`: 
+    - Parameters: state (SessionState) - Streamlit sessiestate
+    - Return: Geen
+    - Afhankelijkheden: quotes.py
+
+### config.py
+- **Status**: Nog te implementeren
+- **Bestandsnaam**: config.py
+- **Functionaliteit**: Configuratie-instellingen voor de applicatie
+- **Belangrijkste functies**:
+  - Geen functies, alleen constanten en configuratievariabelen zoals:
+    - `ROBOT_IMAGES`: Lijst met robotafbeelding-paden of SVG-code
+    - `APP_TITLE`: Titel van de applicatie
+    - `APP_DESCRIPTION`: Beschrijving van de applicatie
+
+## 4. Status
+Alle modules moeten nog geïmplementeerd worden.
+
+## 5. Volgende stappen
+
+### Must-haves:
+1. Basisstructuur opzetten met alle benodigde bestanden
+2. Implementeren van de robot visualisatie component
+3. Toevoegen van grappige uitspraken en klikfunctionaliteit
+4. Integreren van alle componenten in de hoofdapplicatie
+5. Toevoegen van installatie-instructies en requirements.txt
+
+### Nice-to-haves:
+1. Animatie toevoegen wanneer er op de robot wordt geklikt
+2. Verschillende robots om uit te kiezen
+3. Mogelijkheid om eigen uitspraken toe te voegen
+4. Thema-aanpassing (licht/donker modus)
+5. Geluidseffecten bij klikken
