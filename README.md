@@ -2,13 +2,20 @@
 
 Een interactieve Streamlit-applicatie die een robot weergeeft waarop gebruikers kunnen klikken om grappige uitspraken te zien over wat een GitHub Agent allemaal kan doen.
 
-## Beschrijving
+## Projectbeschrijving
 
-Stan de GitHub Agent is een eenvoudige, vermakelijke interface die laat zien wat de mogelijkheden van een GitHub Agent zijn op een humoristische wijze. Klik op de robot en ontdek wat Stan allemaal kan doen!
+Stan de GitHub Agent is een eenvoudige, vermakelijke interface die laat zien wat de mogelijkheden van een GitHub Agent zijn op een humoristische wijze. Klik op Stan de robot om te ontdekken wat een GitHub Agent allemaal kan doen!
 
 ## Installatie
 
-1. Kloon deze repository:
+### Vereisten
+
+- Python 3.8 of hoger
+- Streamlit 1.15.0 of hoger
+
+### Stappen
+
+1. Clone de repository:
    ```
    git clone https://github.com/Fbeunder/GitHubAgent.git
    cd GitHubAgent
@@ -19,17 +26,44 @@ Stan de GitHub Agent is een eenvoudige, vermakelijke interface die laat zien wat
    pip install -r requirements.txt
    ```
 
-3. Start de applicatie:
+## Gebruik
+
+1. Start de applicatie:
    ```
    streamlit run app.py
    ```
 
-## Gebruik
+2. Open je browser en navigeer naar de URL die in de terminal wordt weergegeven (meestal http://localhost:8501).
 
-1. Na het starten van de applicatie wordt de Streamlit interface geopend in je browser.
-2. Klik op de robot om een grappige uitspraak te zien.
-3. Klik opnieuw voor meer uitspraken!
+3. Klik op Stan de robot om verschillende grappige uitspraken te zien over wat een GitHub Agent allemaal kan doen!
 
-## Ontwikkeld door
+## Projectstructuur
 
-Stan de GitHub Agent - Je vriendelijke GitHub robot assistent.
+- `app.py`: Hoofdapplicatie en Streamlit interface
+- `robot.py`: Module voor robotvisualisatie en interactie
+- `quotes.py`: Module voor het beheren van grappige uitspraken
+- `utils.py`: Algemene hulpfuncties
+- `config.py`: Configuratie-instellingen met constanten
+- `test_app.py`: Unittest script voor het testen van de applicatie
+
+## Testen
+
+Voer de unit tests uit om de functionaliteit te verifiëren:
+
+```
+python -m unittest test_app.py
+```
+
+## Bijdragen
+
+Bijdragen aan dit project zijn welkom! Je kunt bijdragen door:
+
+1. Een fork te maken van het project
+2. Een nieuwe branch te maken voor je functie (`git checkout -b feature/geweldige-functie`)
+3. Je wijzigingen te committen (`git commit -m 'Voeg geweldige functie toe'`)
+4. De branch te pushen (`git push origin feature/geweldige-functie`)
+5. Een Pull Request te openen
+
+## Licentie
+
+Dit project is gelicenseerd onder de MIT-licentie. Zie het LICENSE-bestand voor details.
