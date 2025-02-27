@@ -25,6 +25,10 @@ def initialize_session_state():
     
     if 'click_count' not in st.session_state:
         st.session_state.click_count = 0
+    
+    # Voorkom reset van session state bij hot reload
+    if 'initialized' not in st.session_state:
+        st.session_state.initialized = True
 
 
 def handle_click_event():
@@ -35,13 +39,19 @@ def handle_click_event():
     Returns:
         None: Updates de session state direct.
     """
-    # Verhoog de klik teller
-    st.session_state.click_count += 1
-    
-    # Haal de volgende quote op
-    new_quote, new_index = get_next_quote(st.session_state.quote_index)
-    st.session_state.current_quote = new_quote
-    st.session_state.quote_index = new_index
-    
-    # Trigger een rerun om de UI te updaten
-    st.experimental_rerun()
+    try:
+        # Verhoog de klik teller
+        st.session_state.click_count += 1
+        
+        # Haal de volgende quote op
+        new_quote, new_index = get_next_quote(st.session_state.quote_index)
+        st.session_state.current_quote = new_quote
+        st.session_state.quote_index = new_index
+        
+        # Success message voor debugging (kan later verwijderd worden)
+        # st.success("Klikgebeurtenis succesvol verwerkt!")
+    except Exception as e:
+        # Voorkom dat de applicatie crasht bij een fout
+        st.error(f"Er is een fout opgetreden: {str(e)}")
+        # Bij een fout, gebruik fallback quote
+        st.session_state.current_quote = "Oeps, een bug! Maar geen zorgen, ik vind bugs leuker dan mensen!"
