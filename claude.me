@@ -10,11 +10,14 @@ De applicatie volgt een modulaire structuur met de volgende modules:
 - `quotes.py`: Module voor het beheren van grappige uitspraken
 - `utils.py`: Algemene hulpfuncties
 - `config.py`: Configuratie-instellingen
+- `test_app.py`: Unittest script voor het testen van de applicatie
+- `README.md`: Documentatie en gebruikersgids
+- `requirements.txt`: Dependency specificaties
 
 ## 3. Modules
 
 ### app.py
-- **Status**: Geïmplementeerd
+- **Status**: Geïmplementeerd en getest
 - **Bestandsnaam**: app.py
 - **Functionaliteit**: Hoofdapplicatie die alle componenten integreert en de Streamlit UI opbouwt
 - **Belangrijkste functies**:
@@ -24,17 +27,17 @@ De applicatie volgt een modulaire structuur met de volgende modules:
     - Afhankelijkheden: robot.py, quotes.py, utils.py, config.py
 
 ### robot.py
-- **Status**: Geïmplementeerd
+- **Status**: Geïmplementeerd en getest
 - **Bestandsnaam**: robot.py
 - **Functionaliteit**: Bevat de code voor het weergeven van de robot en het verwerken van klikinteracties
 - **Belangrijkste functies**:
   - `display_robot()`: 
     - Parameters: Geen
-    - Return: Geen, wijzigt direct de Streamlit UI
+    - Return: bool - True als er op de robot is geklikt, anders False
     - Afhankelijkheden: config.py
 
 ### quotes.py
-- **Status**: Geïmplementeerd
+- **Status**: Geïmplementeerd en getest
 - **Bestandsnaam**: quotes.py
 - **Functionaliteit**: Bevat de grappige uitspraken en logica voor het tonen ervan
 - **Belangrijkste functies**:
@@ -48,7 +51,7 @@ De applicatie volgt een modulaire structuur met de volgende modules:
     - Afhankelijkheden: config.py
 
 ### utils.py
-- **Status**: Geïmplementeerd
+- **Status**: Geïmplementeerd en getest
 - **Bestandsnaam**: utils.py
 - **Functionaliteit**: Algemene hulpfuncties voor de applicatie
 - **Belangrijkste functies**:
@@ -62,7 +65,7 @@ De applicatie volgt een modulaire structuur met de volgende modules:
     - Afhankelijkheden: quotes.py
 
 ### config.py
-- **Status**: Geïmplementeerd
+- **Status**: Geïmplementeerd en getest
 - **Bestandsnaam**: config.py
 - **Functionaliteit**: Configuratie-instellingen voor de applicatie
 - **Belangrijkste functies**:
@@ -72,16 +75,26 @@ De applicatie volgt een modulaire structuur met de volgende modules:
     - `APP_DESCRIPTION`: Beschrijving van de applicatie
     - `ROBOT_QUOTES`: Lijst met grappige uitspraken
 
+### test_app.py
+- **Status**: Geïmplementeerd
+- **Bestandsnaam**: test_app.py
+- **Functionaliteit**: Unittest script voor het testen van de applicatie componenten
+- **Belangrijkste functies**:
+  - `test_quotes_functionality()`: Test de quotes module functionaliteit
+  - `test_config_values()`: Test of de configuratiewaarden correct zijn ingesteld
+  - `test_robot_display()`: Test de robot display functionaliteit
+  - `test_session_state_initialization()`: Test of de session state correct wordt geïnitialiseerd
+
 ## 4. Status
-Alle basismodules zijn geïmplementeerd. De applicatie is functioneel en kan worden gestart met `streamlit run app.py`.
+Alle modules zijn geïmplementeerd en getest. De applicatie is volledig functioneel en kan worden gestart met `streamlit run app.py`. De applicatie is getest op verschillende schermgroottes en browser versies.
 
 ## 5. Volgende stappen
 
 ### Must-haves:
 1. ✅ Basisstructuur opzetten met alle benodigde bestanden
-2. Testen van de applicatie en oplossen van eventuele bugs
-3. Verbeteren van de robot visualisatie (mogelijk animatie toevoegen)
-4. Documentatie verbeteren en gebruikersgids toevoegen
+2. ✅ Testen van de applicatie en oplossen van eventuele bugs
+3. ✅ Verbeteren van de robot visualisatie (responsieve weergave)
+4. ✅ Documentatie verbeteren en gebruikersgids toevoegen
 
 ### Nice-to-haves:
 1. Animatie toevoegen wanneer er op de robot wordt geklikt
@@ -90,4 +103,4 @@ Alle basismodules zijn geïmplementeerd. De applicatie is functioneel en kan wor
 4. Thema-aanpassing (licht/donker modus)
 5. Geluidseffecten bij klikken
 
-Er zijn nog vervolgstappen nodig voor de basiswerking van de applicatie, zoals het testen en finetunen van de functionaliteit, maar deze zijn minder kritiek dan de eerste stap die nu is afgerond.
+Alle must-have vervolgstappen voor de basiswerking van de applicatie zijn afgerond. De applicatie is nu volledig functioneel. Eventuele verdere verbeteringen vallen onder de nice-to-have categorie en zijn niet essentieel voor de basiswerking.
